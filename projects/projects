@@ -1,0 +1,44 @@
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;calculator app&lt;/title&gt;
+
+  &lt;link rel="stylesheet" href="style.css"&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="calculator"&gt;
+      &lt;input type="text" placeholder="0" id="output-screen"&gt;
+      &lt;button onclick="clr()"&gt;CL&lt;/button&gt;
+      &lt;button onclick="del()"&gt;DEL&lt;/button&gt;
+      &lt;button onclick="display('%')"&gt;%&lt;/button&gt;
+      &lt;button onclick="display('/')"&gt;/&lt;/button&gt;
+      &lt;button onclick="display('7')"&gt;7&lt;/button&gt;
+      &lt;button onclick="display('8')"&gt;8&lt;/button&gt;
+      &lt;button onclick="display('9')"&gt;9&lt;/button&gt;
+      &lt;button onclick="display('*')"&gt;*&lt;/button&gt;
+      &lt;button onclick="display('4')"&gt;4&lt;/button&gt;
+      &lt;button onclick="display('5')"&gt;5&lt;/button&gt;
+      &lt;button onclick="display('6')"&gt;6&lt;/button&gt;
+      &lt;button onclick="display('-')"&gt;-&lt;/button&gt;
+      &lt;button onclick="display('1')"&gt;1&lt;/button&gt;
+      &lt;button onclick="display('2')"&gt;2&lt;/button&gt;
+      &lt;button onclick="display('3')"&gt;3&lt;/button&gt;
+      &lt;button onclick="display('+')"&gt;+&lt;/button&gt;
+      &lt;button onclick="display('.')"&gt;.&lt;/button&gt;
+      &lt;button onclick="display('0')"&gt;0&lt;/button&gt;
+      &lt;button onclick="calculate()" class="equal"&gt;=&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;script src="main.js"&gt;&lt;/script&gt;
+
+
+&lt;/body&gt;
+
+&lt;/html&gt;

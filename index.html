@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entity Linux</title>
+  <link rel='stylesheet' href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<style>
+  p span.cursor {
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+
+  width: 3px;
+
+  animation: blink 1s infinite;
+
+}
+
+.container p span.cursor.typing {
+
+  animation: none;
+
+}
+body {
+  background-image: url('./images.jpeg');
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+ 
+  }
+
+ 
+</style>
+<body>
+<!-- partial:index.partial.html -->
+<nav class="navbar">
+  <button type="button" class="btn-bars"> <span><i class='bx bxs-widget'></i></span>
+  </button>
+  <div class="navbar-collapse">
+    <span class="btn-close">
+      <i class='bx bx-x'></i>
+    </span>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a href="#" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="./about.html" class="nav-link">About</a>
+      </li>
+      <li class="nav-item">
+        <a href="./projects" class="nav-link">Projects</a>
+      </li>
+      <li class="nav-item">
+        <a href="/project-i/error.html" class="nav-link">Resources</a>
+      </li>
+      <li class="nav-item">
+        <a href="./contact.html" class="nav-link">Contact</a>
+      </li>
+    </ul>
+    <p class="nav-para">This is an unofficial webpage created for educational purposes and is not affiliated with any company's, all trademarks and registered trademarks are the property of their respective owners.</p>
+    <div class="nav-social-icon">
+      <a href="https://ashthetticx.github.io/ashthetticx/"><i class='bx bxl-github'></i></a>
+      <a href="️https://mobile.twitter.com/ashthetticx"><i class='bx bxl-twitter'></i></a>
+      <a href="#"><i class='bx bxl-pinterest-alt'></i></a>
+      <a href="https://www.instagram.com/inaesthetticx_/️"><i class='bx bxl-instagram'></i></a>
+      <a href="#"><i class='bx bxl-youtube'></i></a>
+    </div>
+  </div>
+</nav>
+<!-- header -->
+<section class="main">
+  <a href="#" class="site-name">
+    Entity <span>Linux</span>
+  </a>
+  <div class="header-wrapper">
+    <h3>Welcome to Linux Entity </h3>
+    <h1> <p><span class="typed-text"></span><span class="cursor">&nbsp;</span></p></h1>
+    <div class="header-links">
+      <a href="./projects">Projects</a>
+      <a href="./contact.html">Contact Us</a>
+    </div>
+    <div class="header-social-links">
+      <a href="https://ashthetticx.github.io/ashthetticx/"><i class='bx bxl-github'></i><span>GitHub</span></a>
+      <a href="https://mobile.twitter.com/ashthetticx"><i class='bx bxl-twitter'></i><span>Twitter</span></a>
+      <a href="#"><i class='bx bxl-docker'></i><span>Docker</span></a>
+      <a href="https://www.instagram.com/inaesthetticx_/"><i class='bx bxl-instagram'></i><span>Instagram</span></a>
+      <a href="#"><i class='bx bxl-git'></i><span>Git</span></a>
+    </div>
+  </div>
+</section>
+<div include-html="./loading.html" id="_file"></div>
+<!-- end of header -->
+<!-- partial -->
+  <script src='https://unpkg.com/boxicons@2.0.9/dist/boxicons.js'></script><script  src="./script.js"></script>
+  <script src=".s/jquery-3.6.0.min.js"></script>
+  <script src=".s/include-html.min.js"></script>
+  <script>
+    const typedTextSpan = document.querySelector(".typed-text"); const cursorSpan = document.querySelector(".cursor");  const textArray = ["Welcome! Smile and the day will smile with you.", "An investment in knowledge pays the best interest.", "Change is the end result of all true learning.", "The learning process continues until the day you die. ", "Education is not the filling of a pail, but the lighting of a fire.", "learn from your mistakes.", "Good code is its own best documentation."];
+    const typingDelay = 190;
+    const erasingDelay = 80; const newTextDelay = 2000; // Delay between current and next text
+    let textArrayIndex = 0;
+    let charIndex = 0;
+    function type() {
+      if (charIndex < textArray[textArrayIndex].length) {
+
+        if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+
+        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingDelay);
+      }
+      else {
+        cursorSpan.classList.remove("typing");
+  setTimeout(erase, newTextDelay);
+     } }
+
+    function erase() {
+      if (charIndex > 0) {
+        if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+        charIndex--;
+       setTimeout(erase, erasingDelay);
+
+      }  else {
+
+        cursorSpan.classList.remove("typing");
+
+        textArrayIndex++;
+
+        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+
+        setTimeout(type, typingDelay + 1100);
+
+      }
+
+    }
+
+  
+
+    document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
+
+      if (textArray.length) setTimeout(type, newTextDelay + 250);
+
+    });
+
+  </script>
+
+</body>
+</html>
